@@ -6,10 +6,10 @@
 ```
 
 2. Create directory tree like this
-    -- bin
-    -- config
-    -- data
-        -- broker0-log
-        -- broker1-log
-        -- broker2-log
-    -- logs
+    - bin
+    - config
+    - data
+        - broker0-log
+        - broker1-log
+        - broker2-log
+    - logs
