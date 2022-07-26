@@ -5,7 +5,12 @@
     sudo apt install openjdk-8-jdk
 ```
 
-2. Create directory tree like this
+1. Create and update the broker configuration:
+    - config/broker-0.properties
+    - config/broker-1.properties
+    - config/broker-2.properties
+
+3. Create directory for log files
     - bin
     - config
     - data
