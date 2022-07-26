@@ -1,0 +1,9 @@
+#!/bin/bash
+
+files=$(ls zoo*)
+
+for file in ${files[@]}
+do
+	arrFile=(${file//\[/ })
+	mv $file ${arrFile[0]}
+done

@@ -1,7 +1,11 @@
+#Stop zookeeper and broker
+zookeeper-server-stop 
+kafka-server-stop
+
 # Start zookeeper
-zookeeper-server-start.sh -daemon ./config/zookeeper.properties
+zookeeper-server-start -daemon ./config/zookeeper.properties
 
 # Start kafka broker server
-kafka-server-start.sh -daemon ./config/broker-0.properties 
-kafka-server-start.sh -daemon ./config/broker-1.properties 
-kafka-server-start.sh -daemon ./config/broker-2.properties 
+kafka-server-start -daemon ./config/broker-0.properties 
+kafka-server-start -daemon ./config/broker-1.properties 
+kafka-server-start -daemon ./config/broker-2.properties 
