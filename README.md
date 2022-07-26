@@ -12,4 +12,5 @@
         - broker0-log
         - broker1-log
         - broker2-log
+        - zookeeper-log
     - logs
