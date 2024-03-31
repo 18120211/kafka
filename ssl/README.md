@@ -6,22 +6,22 @@ This repository contains the configuration files for zookeeper, zookeeper client
 
 **Please Note** - For Truststores and Keystores, I have shown the steps only to generate *kafka.zookeeper.truststore.jks* and *kafka.zookeeper.keystore.jks*. The procedure is the same for generating such files for brokers, producers, and consumers.
 
-**1. Generate CA**
+**1. Generate CA (Root CA private key and Root CA certificate)**
 ```
 openssl req -new -x509 -keyout ca-key -out ca-cert -days 3650
 ```
 
-**2. Create Truststore**
+**2. Create Truststore | Add the CA root certificate to the Truststore**
 ```
 keytool -keystore kafka.zookeeper.truststore.jks -alias ca-cert -import -file ca-cert
 ```
 
-**3. Create Keystore**
+**3. Create Keystore | Generate key pair for the Keystore**
 ```
 keytool -keystore kafka.zookeeper.keystore.jks -alias zookeeper -validity 3650 -genkey -keyalg RSA -ext SAN=dns:localhost
 ```
 
-**4. Create certificate signing request (CSR)**
+**4. Create certificate signing request (CSR) with the public_key in the Keystore**
 ```
 keytool -keystore kafka.zookeeper.keystore.jks -alias zookeeper -certreq -file ca-request-zookeeper
 ```
